@@ -16,8 +16,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: aliceblue;
-  color: black;
+  background-color: #212121;
+  color: aliceblue;
 }
 
 main {
@@ -36,4 +36,14 @@ textarea {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: calc(1em + 8vmin);
+  line-height: 1em;
+  margin-bottom: 0.2em;
+  color: #2c2c2c;
 }

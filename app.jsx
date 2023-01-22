@@ -2,8 +2,8 @@ import hydrate from "ultra/hydrate.js";
 import React from "react";
 import { useState } from "react";
 
-export default function App({ battery, weather }) {
-  console.log({ battery, weather });
+export default function App({ battery, weather, time }) {
+  const title = "E-WASTE";
   return (
     <html lang="en">
       <head>
@@ -14,11 +14,17 @@ export default function App({ battery, weather }) {
       </head>
       <body>
         <main>
+          <h1>
+            {title.split("").map((x) => (
+              <span>{x}</span>
+            ))}
+          </h1>
           <div>
-            <strong>Solar powered RPI Zero 2:</strong>
+            <strong>Solar powered RPI Zero 2</strong>
           </div>
           <div>Current charge: {battery?.charge?.data}%</div>
           <div>Location: Newcastle, NSW</div>
+          <div>Local time: {time}</div>
           <div>Temperature: {weather?.air_temp}°C</div>
           <div>Humidity: {weather?.rel_hum}%</div>
         </main>
