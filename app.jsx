@@ -14,6 +14,9 @@ export default function App({ battery, weather }) {
       </head>
       <body>
         <main>
+          <div>
+            <strong>Solar powered RPI Zero 2:</strong>
+          </div>
           <div>Current charge: {battery?.charge?.data}%</div>
           <div>Location: Newcastle, NSW</div>
           <div>Temperature: {weather?.air_temp}°C</div>
