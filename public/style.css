@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "mono";
+  src: url("./mono.woff2");
+  font-weight: 100 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "mono";
+  src: url("./bold.woff2");
+  font-weight: 600 900;
+  font-display: block;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  color: black;
+}
+
+main {
+  padding: 1em;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  font-family: mono;
+  font-smooth: always;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
