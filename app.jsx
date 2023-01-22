@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function App({ battery, weather, time }) {
-  const title = "E-WASTE";
+  const title = "EWASTE";
   return (
     <html lang="en">
       <head>
@@ -19,6 +19,7 @@ export default function App({ battery, weather, time }) {
               <span>{x}</span>
             ))}
           </h1>
+          {/* <img src="/bg.png" /> */}
           <div>
             <strong>Solar powered RPI Zero 2</strong>
           </div>

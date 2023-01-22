@@ -42,8 +42,17 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  font-size: calc(1em + 8vmin);
+  font-size: calc(1em + 4vw);
+  font-weight: 100;
   line-height: 1em;
-  margin-bottom: 0.2em;
-  color: #2c2c2c;
+  margin-bottom: 1rem;
+  /* color: #2c2c2c; */
+}
+
+img {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 0 0 1.5rem;
+  height: auto;
 }
