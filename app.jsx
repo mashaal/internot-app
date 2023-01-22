@@ -8,7 +8,7 @@ export default function App({ battery, weather }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>lite</title>
+        <title>e-waste</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/style.css" rel="stylesheet" />
       </head>
