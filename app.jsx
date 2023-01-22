@@ -27,7 +27,7 @@ export default function App({ battery, weather, time }) {
           <div>
             {battery?.status?.powerInput == "NOT_PRESENT"
               ? "Not charging"
-              : "Charging"}
+              : `Charging: ${battery?.status?.powerInput}`}
           </div>
           <div>Location: Newcastle, NSW</div>
           <div>Local time: {time}</div>
