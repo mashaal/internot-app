@@ -24,6 +24,11 @@ export default function App({ battery, weather, time }) {
             <strong>Solar powered RPI Zero 2</strong>
           </div>
           <div>Current charge: {battery?.charge?.data}%</div>
+          <div>
+            {battery?.status?.powerInput == "NOT_PRESENT"
+              ? "Not charging"
+              : "Charging"}
+          </div>
           <div>Location: Newcastle, NSW</div>
           <div>Local time: {time}</div>
           <div>Temperature: {weather?.air_temp}°C</div>
