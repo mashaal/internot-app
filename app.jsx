@@ -3,20 +3,20 @@ import React from "react";
 import { useState } from "react";
 
 export default function App({ battery, weather, time, bom }) {
-  const title = "EWASTE";
+  const title = "/ew/ /ast/ /e/";
   const charge = battery?.charge?.data || 0;
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>e-waste</title>
+        <title>🦠🧃</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/style.css" rel="stylesheet" />
       </head>
       <body>
-        <h1 style={{ filter: 'url("#f-9a51f798")' }}>
+        <h1 style={{ textTransform: "uppercase" }}>
           {title.split("").map((x) => (
-            <span>{x}</span>
+            <span style={{ color: x == "/" ? "#333" : "inherit" }}>{x}</span>
           ))}
         </h1>
         <svg
