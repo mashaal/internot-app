@@ -25,7 +25,7 @@ export default function App({ battery, weather, time, bom }) {
               style={{
                 width: `${charge}%`,
                 background:
-                  charge > 70 ? "lime" : charge > 30 ? "orange" : "red",
+                  charge > 66 ? "lime" : charge > 33 ? "orange" : "red",
               }}
             >
               {`${charge}%`}
