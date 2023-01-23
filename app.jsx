@@ -14,11 +14,58 @@ export default function App({ battery, weather, time, bom }) {
         <link href="/style.css" rel="stylesheet" />
       </head>
       <body>
-        <h1>
+        <h1 style={{ filter: 'url("#f-9a51f798")' }}>
           {title.split("").map((x) => (
             <span>{x}</span>
           ))}
         </h1>
+        <svg
+          width="100%"
+          height="100%"
+          style={{
+            visibility: "hidden",
+            position: "absolute",
+            top: "-100%",
+            left: "-100%",
+            pointerEvents: "none",
+          }}
+        >
+          <defs>
+            <filter
+              x="-20%"
+              y="-20%"
+              width="140%"
+              height="140%"
+              filterRes="1"
+              filterUnits="objectBoundingBox"
+              primitiveUnits="userSpaceOnUse"
+              color-interpolation-filters="linearRGB"
+              id="f-9a51f798"
+            >
+              <feTurbulence
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                baseFrequency="0.01"
+                numOctaves="2"
+                seed="1"
+                stitchTiles="stitch"
+                result="e-fb0909a1"
+              ></feTurbulence>
+              <feDisplacementMap
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                in="SourceGraphic"
+                in2="e-fb0909a1"
+                scale="20"
+                result="e-b69f44c3"
+              ></feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
         <div className="outer">
           <div className="button">
             <span
@@ -33,12 +80,14 @@ export default function App({ battery, weather, time, bom }) {
           </div>
         </div>
         <main>
-          <div>
-            <strong>Newcastle, NSW</strong>
-          </div>
           <p>
-            <strong>{time}</strong> {bom}
+            This website is running on a solar powered server in{" "}
+            <strong>Newcastle, NSW</strong>.
           </p>
+          <p>
+            Local time: <strong>{time}</strong>.
+          </p>
+          <p>{bom}</p>
         </main>
       </body>
     </html>
