@@ -3,13 +3,13 @@ import React from "react";
 import { useState } from "react";
 
 export default function App({ battery, weather, time, bom }) {
-  const title = "/ew/ /ast/ /e/";
+  const title = "ew/ast/e";
   const charge = battery?.charge?.data || 0;
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>🦠🧃</title>
+        <title>🧃</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/style.css" rel="stylesheet" />
       </head>
