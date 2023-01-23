@@ -24,6 +24,10 @@ main {
   padding: 1em;
 }
 
+body {
+  padding: 1rem;
+}
+
 html,
 body,
 button,
@@ -55,4 +59,52 @@ img {
   display: block;
   margin: 0 0 1.5rem;
   height: auto;
+}
+
+.outer {
+  margin: 0 0 1rem;
+  height: 40px;
+  padding: 10px;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.button {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  bottom: 1px;
+  left: 1px;
+  overflow: hidden;
+  background-color: rgba(150, 150, 150, 1);
+  border-radius: 20px;
+  box-shadow: inset 5px -10px 15px 5px rgba(25, 25, 25, 0.6),
+    -4px 4px 6px 3px rgba(0, 0, 0, 0.4);
+}
+
+.button span {
+  display: block;
+  width: 50%;
+  background: lime;
+  height: 100%;
+  padding: 0.6rem 1rem;
+  mix-blend-mode: lighten;
+  color: black;
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+  color: #aaa;
+}
+
+p strong {
+  color: white;
 }

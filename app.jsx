@@ -2,8 +2,9 @@ import hydrate from "ultra/hydrate.js";
 import React from "react";
 import { useState } from "react";
 
-export default function App({ battery, weather, time }) {
+export default function App({ battery, weather, time, bom }) {
   const title = "EWASTE";
+  const charge = battery?.charge?.data || 0;
   return (
     <html lang="en">
       <head>
@@ -13,26 +14,31 @@ export default function App({ battery, weather, time }) {
         <link href="/style.css" rel="stylesheet" />
       </head>
       <body>
+        <h1>
+          {title.split("").map((x) => (
+            <span>{x}</span>
+          ))}
+        </h1>
+        <div className="outer">
+          <div className="button">
+            <span
+              style={{
+                width: `${charge}%`,
+                background:
+                  charge > 80 ? "lime" : charge > 30 ? "orange" : "red",
+              }}
+            >
+              {`${charge}%`}
+            </span>
+          </div>
+        </div>
         <main>
-          <h1>
-            {title.split("").map((x) => (
-              <span>{x}</span>
-            ))}
-          </h1>
-          {/* <img src="/bg.png" /> */}
           <div>
-            <strong>Solar powered RPI Zero 2</strong>
+            <strong>Newcastle, NSW</strong>
           </div>
-          <div>Current charge: {battery?.charge?.data}%</div>
-          <div>
-            {battery?.status?.data?.powerInput == "NOT_PRESENT"
-              ? "Not charging"
-              : `Charging: ${battery?.status?.data?.powerInput}`}
-          </div>
-          <div>Location: Newcastle, NSW</div>
-          <div>Local time: {time}</div>
-          <div>Temperature: {weather?.air_temp}°C</div>
-          <div>Humidity: {weather?.rel_hum}%</div>
+          <p>
+            <strong>{time}</strong> {bom}
+          </p>
         </main>
       </body>
     </html>
