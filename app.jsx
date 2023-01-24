@@ -39,7 +39,7 @@ export default function App({ battery, weather, time, bom }) {
               filterRes="1"
               filterUnits="objectBoundingBox"
               primitiveUnits="userSpaceOnUse"
-              color-interpolation-filters="linearRGB"
+              colorInterpolationFilters="linearRGB"
               id="f-9a51f798"
             >
               <feTurbulence
