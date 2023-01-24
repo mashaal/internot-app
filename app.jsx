@@ -14,7 +14,7 @@ export default function App({ battery, weather, time, bom }) {
         <link href="/style.css" rel="stylesheet" />
       </head>
       <body>
-        <h1 style={{ textTransform: "uppercase" }}>
+        <h1 style={{ filter: "url(#f-9a51f798)", textTransform: "uppercase" }}>
           {title.split("").map((x) => (
             <span style={{ color: x == "/" ? "#333" : "inherit" }}>{x}</span>
           ))}
@@ -47,7 +47,7 @@ export default function App({ battery, weather, time, bom }) {
                 y="0"
                 width="100%"
                 height="100%"
-                baseFrequency="0.01"
+                baseFrequency="0.02"
                 numOctaves="2"
                 seed="1"
                 stitchTiles="stitch"
