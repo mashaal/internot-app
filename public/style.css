@@ -46,7 +46,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  font-size: calc(1em + 4vw);
+  font-size: calc(3em + 3vw);
   font-weight: 100;
   line-height: 1em;
   margin-bottom: 1rem;
