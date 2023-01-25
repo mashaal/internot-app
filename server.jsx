@@ -47,10 +47,20 @@ const getBattery = async () => {
   }
 };
 
+let weather;
+let battery;
+let bom;
+
+const pop = async () => {
+  weather = await getWeather();
+  battery = await getBattery();
+  bom = await getBom();
+};
+
+pop();
+setInterval(pop, 1000 * 60 * 10);
+
 server.get("*", async (context) => {
-  let weather = await getWeather();
-  let battery = await getBattery();
-  let bom = await getBom();
   /**
    * Render the request
    */
