@@ -9,21 +9,14 @@ const server = await createServer({
   browserEntrypoint: import.meta.resolve("./app.jsx"),
 });
 
-const getWeather = async () => {
-  const weather = await fetch(
-    "http://reg.bom.gov.au/fwo/IDN60901/IDN60901.94774.json"
-  ).then((x) => x.json());
-  return weather?.observations?.data?.[0];
-};
-
 const getBom = async () => {
   const url = "http://www.bom.gov.au/nsw/forecasts/newcastle.shtml";
   try {
     const res = await fetch(url);
     const html = await res.text();
-    const $ = cheerio.load(html);
+    const $ = cheerio.load(html || "");
 
-    const description = $(".day:first-of-type .forecast p").text();
+    const description = $(".day:first-of-type .forecast p")?.text();
 
     return description;
   } catch (error) {
@@ -41,24 +34,22 @@ const getBattery = async () => {
     const output = await cmd.output();
     cmd.close();
     const outStr = new TextDecoder().decode(output);
-    return JSON.parse(outStr);
+    return JSON.parse(outStr || "{}");
   } catch (e) {
     return {};
   }
 };
 
-let weather;
 let battery;
 let bom;
 
 const pop = async () => {
-  weather = await getWeather();
   battery = await getBattery();
   bom = await getBom();
 };
 
-pop();
-setInterval(pop, 1000 * 60 * 10);
+await pop();
+setInterval(pop, 1000 * 60 * 60);
 
 server.get("*", async (context) => {
   /**
@@ -68,7 +59,6 @@ server.get("*", async (context) => {
     <App
       bom={bom}
       battery={battery}
-      weather={weather}
       time={new Date().toLocaleTimeString([], {
         hour: "2-digit",
         hour12: false,

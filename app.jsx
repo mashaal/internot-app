@@ -1,9 +1,8 @@
 import hydrate from "ultra/hydrate.js";
 import React from "react";
-import { useState } from "react";
 
-export default function App({ battery, weather, time, bom }) {
-  const title = "ew/ast/e";
+export default function App({ battery, time, bom }) {
+  const title = "ewaste";
   const charge = battery?.charge?.data || 0;
   return (
     <html lang="en">
@@ -16,7 +15,7 @@ export default function App({ battery, weather, time, bom }) {
       <body>
         <h1 style={{ filter: "url(#f-9a51f798)", textTransform: "uppercase" }}>
           {title.split("").map((x) => (
-            <span style={{ color: x == "/" ? "#333" : "inherit" }}>{x}</span>
+            <span>{x}</span>
           ))}
         </h1>
         <svg
@@ -81,7 +80,7 @@ export default function App({ battery, weather, time, bom }) {
         </div>
         <main>
           <p>
-            This website is running on a solar powered server in{" "}
+            This website is running on solar power in{" "}
             <strong>Newcastle, NSW</strong>.
           </p>
           <p>
